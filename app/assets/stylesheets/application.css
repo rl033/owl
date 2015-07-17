@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ @import 'home';
+ @import 'navbar';
+ /*.container {
+  background-img: url(/assets/images/home_background.jpg);
+  background-color: black;
+}*/

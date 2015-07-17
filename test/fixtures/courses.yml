@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyString
+  code: MyString
+  title: MyString
+  faculty: MyString
+  section: MyString
+  session: MyString
+  term: MyString
+  day: MyString
+  start_time: 
+
+two:
+  subject: MyString
+  code: MyString
+  title: MyString
+  faculty: MyString
+  section: MyString
+  session: MyString
+  term: MyString
+  day: MyString
+  start_time: 

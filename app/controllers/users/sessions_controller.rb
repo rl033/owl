@@ -22,15 +22,9 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.for(:sign_in) << :attribute
   # end
-  def create
-    user = User.find_by(email: params[:email])
 
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to root_path, notice: "Welcome back, #{user.first_name}!"
-    else
-      flash.now[:alert] = "Log in failed..."
-      render :new
-    end
+  def after_sign_in_path_for(resource)
+    # session["user_return_to"] || user_path
+    user_path(current_user.id)
   end
 end

@@ -11,7 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712145729) do
+ActiveRecord::Schema.define(version: 20150713055545) do
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "subject"
+    t.string   "code"
+    t.string   "title"
+    t.string   "faculty"
+    t.string   "section"
+    t.string   "session"
+    t.string   "term"
+    t.string   "day"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "credit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "instructors", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "school"
+    t.string   "dept"
+    t.integer  "rank"
+    t.string   "address"
+    t.string   "phone"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "school"
+    t.string   "faculty"
+    t.string   "specialization"
+    t.integer  "year_level"
+    t.string   "phone"
+    t.string   "address"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,6 +73,9 @@ ActiveRecord::Schema.define(version: 20150712145729) do
     t.datetime "updated_at",                          null: false
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "account_type"
+    t.integer  "student_id"
+    t.integer  "instructor_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
