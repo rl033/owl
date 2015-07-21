@@ -29,8 +29,8 @@ class InstructorsController < ApplicationController
     respond_to do |format|
       if @instructor.save
         User.update(current_user.id, instructor_id: @instructor.id)
-        format.html { redirect_to @instructor, notice: 'instructor was successfully created.' }
-        format.json { render :show, status: :created, location: @instructor }
+        format.html { redirect_to user_path(current_user.id), notice: 'instructor was successfully created.' }
+        # format.json { render :show, status: :created, location: @instructor }
       else
         format.html { render :new }
         format.json { render json: @instructor.errors, status: :unprocessable_entity }

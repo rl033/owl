@@ -29,8 +29,8 @@ class StudentsController < ApplicationController
     respond_to do |format|
       if @student.save
         User.update(current_user.id, student_id: @student.id)
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
-        format.json { render :show, status: :created, location: @student }
+        format.html { redirect_to user_path(current_user.id), notice: 'Student was successfully created.' }
+        # format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new }
         format.json { render json: @student.errors, status: :unprocessable_entity }

@@ -5,44 +5,56 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 
-        <div class="field">
-          <%= f.label :first_name %><br />
-          <%= f.text_field :first_name, autofocus: true %>
+        <div class="field row">
+          <%= f.label :Name, class: "col-sm-6 col-sm-offset-1 control-label" %><br/>
+          <div class="col-sm-5 col-sm-offset-1">
+            <%= f.text_field :first_name, autofocus: true, placeholder: "First", class: "form-control"%>
+          </div>
+          <div class="col-sm-5">
+            <%= f.text_field :last_name, autofocus: true, placeholder: "Last", class: "form-control" %>
+          </div>
         </div>
 
-        <div class="field">
-          <%= f.label :last_name %><br />
-          <%= f.text_field :last_name, autofocus: true %>
+        <div class="field row">
+          <%= f.label :email, class: "col-sm-6 col-sm-offset-1 control-label" %><br />
+          <div class="col-sm-10 col-sm-offset-1">
+            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          </div> 
         </div>
 
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>
+        <div class="field row">
+          <div class="col-sm-6 col-sm-offset-1 control-label">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>
+          </div><br />
+          <div class="col-sm-10 col-sm-offset-1">
+            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          </div>
         </div>
 
-        <div class="field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
+        <div class="field row">
+          <%= f.label :password_confirmation, class: "col-sm-6 col-sm-offset-1 control-label" %><br />
+          <div class="col-sm-10 col-sm-offset-1">
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+          </div>
+        </div><br />
 
 
-        <div class="field">
-          <%= f.radio_button :account_type, 'student' %> 
-          <%= f.label :account_type, 'Student', :value => 'email', checked: 'true' %>
-          <%= f.radio_button :account_type, 'instrutor' %>
-          <%= f.label :account_type, 'Instrutor', :value => 'sms' %>
-        </div>
+        <div class="field row">
+          <div class="col-sm-3 col-sm-offset-3">
+            <%= f.radio_button :account_type, 'student' %> 
+            <%= f.label :account_type, 'Student', :value => 'email', checked: 'true', name: "optionsRadios"%>
+          </div>
+          <div class="col-sm-3">
+            <%= f.radio_button :account_type, 'instructor' %>
+            <%= f.label :account_type, 'Instructor', :value => 'sms' %>
+          </div>
+        </div><br />
 
-        <div class="actions">
-          <%= f.submit "Sign up" %>
+        <div class="actions row">
+          <%= f.submit "Sign up and continue", class: "btn btn-default col-sm-5 col-sm-offset-3" %>
         </div>
       <% end %>
     </div>

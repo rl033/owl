@@ -57,11 +57,12 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get "/user/:id", to: "users#show", as: :user
+  # devise_scope :users do
+  #   get 'users/:id' => 'users#show', as: :user
+  # end
+  devise_for :users, controllers: { registrations: 'users/registrations',
+                                      sessions: 'users/sessions' }
 
-  devise_for :users, :controllers => { registrations: 'users/registrations',
-                                        sessions: 'users/sessions' }
-  devise_scope :users do
-    get 'users/:id' => 'users#show', as: :user
-  end
   root to: 'home#index'
 end
