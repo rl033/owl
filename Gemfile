@@ -29,6 +29,10 @@ gem 'pry'
 gem 'tux'
 # User devise for authentication
 gem 'devise'
+# Use angular templates with rails' asset pipeline
+gem 'angular-rails-templates'
+# Rack-based asset packaging system
+gem 'sprockets', '2.12.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
