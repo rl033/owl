@@ -1,10 +1,19 @@
 .navbar {
   padding-bottom: 0.6%;
-  height: 9.2%;
+  height: 60px;
 }
 .navbar-custom {
-  background-color: white;
-  box-shadow:0 1px 1px #aaa;
+  background-color: #0AD2D4;
+  color: white;
+  box-shadow: 0 0 1px #aaa;
+}
+.navbar-header {
+  margin-left: 2%;
+}
+.logo {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
 .user-button {
@@ -15,17 +24,20 @@
   margin-right: 5%;
   position: relative;
 }
-.dropdown-toggle {
-  font-size: 1.2em;
-  margin-top: 2%;
+.dropdown {
+  margin-top: 5%;
+  border: none;
 }
-
 .btn {
-    padding: 14px 24px;
-    border: 0 none;
-    font-weight: bold;
-    letter-spacing: 1px;
-    // text-transform: uppercase;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 14px 24px;
+  border: 0 none;
+  font-weight: bold;
+  letter-spacing: 1px;
+// text-transform: uppercase;
+  transition: all 0.5s ease;
 }
 .btn:focus, .btn:active:focus, .btn.active:focus {
     outline: 0 none;
@@ -60,7 +72,7 @@
 .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
     color: white;
     // border-color: #33a6cc;
-    border-color: white;
+    border-color: #007299;
 }
 .btn-primary.outline:active, .btn-primary.outline.active {
     border-color: #007299;

@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <%=link_to('E', root_path, class: "navbar-brand web-title")%>
+      <%=link_to('Elearning', root_path, class: "navbar-brand web-title logo")%>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -10,6 +10,19 @@
       <ul class="nav navbar-nav navbar-right">   
         <div class="user-button">
           <% if user_signed_in? %>
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <%= current_user.full_name %>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </div>
+            <!-- <div class="user-dropdown">
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.full_name %> <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -20,6 +33,7 @@
                 <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
               </ul>
               </li>
+            </div> -->
           <% else %>
               <%=link_to('Sign in', new_user_session_path, class: 'btn btn-default navbar-btn outline sign-in-btn')%>
               <%=link_to('Sign up', new_user_registration_path, class: 'btn btn-primary navbar-btn outline sign-up-btn')%>

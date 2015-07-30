@@ -1,12 +1,20 @@
 <div class="user-home">
   <!-- <div class="row"> -->
     <div class="side-menu col-md-2">
-      <i class="fa fa-home fa-lg" ui-sref="home"> Home</i><hr>
-      <i class="fa fa-archive fa-lg" ui-sref="course"> Course</i><hr>
-      <i class="fa fa-calendar fa-lg"> Calendar</i><hr>
-      <i class="fa fa-group fa-lg"> Discussion</i>
+      <div class="side-menu-icon">
+        <i class="fa fa-home fa-lg" ui-sref="home"> Home</i>
+      </div>
+      <div class="side-menu-icon">
+        <i class="fa fa-archive fa-lg" ui-sref="course"> Course</i>
+      </div>
+      <div class="side-menu-icon">
+        <i class="fa fa-calendar fa-lg"> Calendar</i>
+      </div>
+      <div class="side-menu-icon">
+        <i class="fa fa-group fa-lg"> Discussion</i>
+      </div>
     </div>
-    <div ui-view class="user-home-content col-md-9">
+    <div ui-view class="user-home-content col-md-8 col-md-offset-1">
   <!-- <h2>User Home</h2> -->
   <!-- <%= @user.full_name %> -->
     </div>
